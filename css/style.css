@@ -3,7 +3,16 @@ body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
   margin: auto;
   color: #404040;
-  background: #000;
+  background: #fff;
+}
+
+nav{
+  background: #fff;
+  width: 100%;
+  height: 70px;
+  -webkit-box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
+  -moz-box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
+  box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
 }
 
 .container {
@@ -37,6 +46,23 @@ body {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
+#titie{
+  text-align: left;
+  margin-left:  15%;
+  font-size: 30px;
+}
+
+#logo{
+  margin-right: 800px;
+}
+
+#containerForm{
+  margin:  0% 20% 10% 0%;
+  background: #000;
+  -webkit-box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
+  -moz-box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
+  box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
+}
 
 #five:checked ~ .progress > .progress-bar {
   width: 5%;
