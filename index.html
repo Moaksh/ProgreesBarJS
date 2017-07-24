@@ -3,9 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Progress Bar</title>
-    <link href="css/style.css"
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+
+    <div class="container">
+
+        <input type="radio" class="radio" name="progress" value="twentyfive" id="twentyfive" checked>
+        <label for="twentyfive" class="label">25%</label>
+
+        <input type="radio" class="radio" name="progress" value="fifty" id="fifty">
+        <label for="fifty" class="label">50%</label>
+
+
+        <input type="radio" class="radio" name="progress" value="onehundred" id="onehundred">
+        <label for="onehundred" class="label">100%</label>
+
+
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+
+
+
+    </div>
+
   <script src="js/style.js"></script>
   </body>
 </html>
