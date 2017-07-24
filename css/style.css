@@ -27,7 +27,7 @@ nav{
 
 }
 
-.progress-bar {
+#progress-bar {
   height: 3px;
   border-radius: 1px;
 	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
@@ -64,27 +64,27 @@ nav{
   box-shadow: 6px 6px 8px 6px rgba(181,175,181,0.47);
 }
 
-#five:checked ~ .progress > .progress-bar {
-  width: 5%;
+#five:checked ~ .progress > #progress-bar {
+  width: 1%;
   background-color: #f63a0f;
 }
 
-#twentyfive:checked ~ .progress > .progress-bar {
+#twentyfive:checked ~ .progress > #progress-bar {
   width: 25%;
   background-color: #f27011;
 }
 
-#fifty:checked ~ .progress > .progress-bar {
+#fifty:checked ~ .progress > #progress-bar {
   width: 50%;
   background-color: #f2b01e;
 }
 
-#seventyfive:checked ~ .progress > .progress-bar {
+#seventyfive:checked ~ .progress > #progress-bar {
   width: 75%;
   background-color: #f2d31b;
 }
 
-#onehundred:checked ~ .progress > .progress-bar {
+#onehundred:checked ~ .progress > #progress-bar {
   width: 100%;
   background-color: #86e01e;
 }
