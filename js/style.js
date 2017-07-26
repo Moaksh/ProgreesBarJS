@@ -1,61 +1,70 @@
-'use strict';
+(function slots(document, customElements) {
+  'use strict';
+  const ELEMNTS = ['color','time','size'];
+  const bar  = document.getElementById('progress');
 
-(function initialLine() {
+  class ProgresBar extends HTMLElement {
 
-  const line = document.getElementById('progress-bar');
-  const seventy = document.getElementById('seventy');
-  const fifty = document.getElementById('fifty');
-  const video = document.getElementById('containerForm');
+    constructor() {
+      super();
+      const shadowRoot = this.attachShadow({mode: 'open'});
 
-  let getValue = () =>{
-    fifty.addEventListener('change', setValueToLine, false);
-    seventy.addEventListener('change',setValueToLine,false);
-  }
+      shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="css/progressbar.css">
+        <div class="progress">
+            <div id="progress-bar"></div>
+        </div>
+      `;
+    }
 
-  function setValueToLine() {
-    switch (this.value) {
-      case 'seventy':
-        line.style.width ="70%";
-        line.style.background = "yellow";
-        break;
-      case 'fifty':
-        line.style.width ="50%";
-        line.style.background = "orange";
-        break;
-      default:
+    static get observedAttributes(){
+      return ELEMNTS;
+    }
+
+
+
+    attributeChangedCallback(attr,oldvalues,newvalues){
+
+      if(attr == 'color'){
+        this.color(newvalues);
+      }
+
+      if(attr ==  'time'){
+        this.time(newvalues);
+      }
+
+      if(attr == 'size'){
+        this.size(newvalues);
+      }
 
     }
+
+    size(sizeprogress){
+//      this.shadowRoot.getElementById('progress-bar').style.height = sizeprogress+"px";
+    }
+
+    color(colorProgress){
+      this.shadowRoot.getElementById('progress-bar').style.background = colorProgress;
+
+    }
+
+    time(timeProgress){
+      alert(timeProgress);
+      let lineBar = this.shadowRoot.getElementById('progress-bar')
+      let width = 0;
+      let id = setInterval(frame, timeProgress);
+
+      function frame() {
+         if (width == 100) {
+           clearInterval(id);
+         } else {
+           width++;
+           lineBar.style.width = width + '%';
+         }
+       }
+
+    }
+
   }
-
-
-  let doSetTimeout = (i) => {
-    setTimeout(function() {
-      line.style.width = i+"%";
-      switch (i) {
-        case 25:
-          line.style.background = "orange";
-          break;
-        case 50:
-          line.style.background = "yellow";
-          break;
-        case 75:
-          line.style.background = "blue";
-          break;
-        case 100:
-          line.style.background ="rgba(0,0,0,0.0)";
-          line.style.border ="0px";
-          video.style.visibility ="visible"
-          break;
-        default:
-
-      }
-    },i * 100);
-  }
-
-
-  getValue()
-  for (let i = 1; i <= 100; ++i)
-     doSetTimeout(i);
-
-
-})();
+  customElements.define('progress-bar', ProgresBar);
+})(document, window.customElements);
