@@ -1,7 +1,9 @@
 (function slots(document, customElements) {
   'use strict';
+
   const ELEMNTS = ['color','time','size'];
-  const bar  = document.getElementById('progress');
+  const bar  = document.querySelector("[data-id='progress']");
+
 
   class ProgresBar extends HTMLElement {
 
@@ -66,5 +68,7 @@
     }
 
   }
+
   customElements.define('progress-bar', ProgresBar);
+
 })(document, window.customElements);
