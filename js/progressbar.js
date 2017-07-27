@@ -3,7 +3,7 @@
 
   const ELEMENTS = ['color','time','size'];
   const bar  = document.querySelector("[data-id='progress']");
-
+  const number = document.querySelector("[data-id='number']")
 
   class ProgresBar extends HTMLElement {
 
@@ -30,9 +30,11 @@
       if(attr == 'color'){
         this.color(newvalues);
       }
+
       if(attr ==  'time'){
         this.time(newvalues);
       }
+
     }
 
 
@@ -52,6 +54,10 @@
            clearInterval(id);
          } else {
            width++;
+           if(number != null){
+             console.log("demo");
+             number.innerHTML =  width+"%";
+           }
            lineBar.style.width = width + '%';
          }
        }
