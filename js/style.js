@@ -1,7 +1,7 @@
 (function slots(document, customElements) {
   'use strict';
 
-  const ELEMNTS = ['color','time','size'];
+  const ELEMENTS = ['color','time','size'];
   const bar  = document.querySelector("[data-id='progress']");
 
 
@@ -20,7 +20,7 @@
     }
 
     static get observedAttributes(){
-      return ELEMNTS;
+      return ELEMENTS;
     }
 
 
@@ -51,7 +51,7 @@
     }
 
     time(timeProgress){
-      alert(timeProgress);
+
       let lineBar = this.shadowRoot.getElementById('progress-bar')
       let width = 0;
       let id = setInterval(frame, timeProgress);
