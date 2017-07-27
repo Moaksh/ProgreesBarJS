@@ -30,20 +30,11 @@
       if(attr == 'color'){
         this.color(newvalues);
       }
-
       if(attr ==  'time'){
         this.time(newvalues);
       }
-
-      if(attr == 'size'){
-        this.size(newvalues);
-      }
-
     }
 
-    size(sizeprogress){
-//      this.shadowRoot.getElementById('progress-bar').style.height = sizeprogress+"px";
-    }
 
     color(colorProgress){
       this.shadowRoot.getElementById('progress-bar').style.background = colorProgress;
