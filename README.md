@@ -26,3 +26,11 @@ git clone https://github.com/carlosvalentindiazFernan/ProgreesBarJS.git
 <progress-bar data-id="progress" color="black" time="2000" >
 </progress-bar>
 ```
+or
+
+```html
+<progress-bar data-id="progress" color="blue" time="100" >
+</progress-bar>
+<p data-id="number">100%</p>
+
+```
