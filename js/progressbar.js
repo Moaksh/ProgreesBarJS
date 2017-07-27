@@ -30,9 +30,11 @@
       if(attr == 'color'){
         this.color(newvalues);
       }
+
       if(attr ==  'time'){
         this.time(newvalues);
       }
+      
     }
 
 
